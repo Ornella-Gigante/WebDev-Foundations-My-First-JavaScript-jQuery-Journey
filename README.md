@@ -4,6 +4,8 @@
     <img src="https://github.com/Ornella-Gigante/WebDev-Foundations-My-First-JavaScript-jQuery-Journey/raw/main/preview.png" alt="Project Preview" width="800">
 </div>
 
+<br>
+
 <div align="center">
   
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
@@ -18,7 +20,6 @@
     <p>A modern web development learning journey</p>
 </div>
 
-[resto del README...]
 
 ## About This Project
 
