@@ -15,12 +15,6 @@
 
 </div>
 
-<div align="center">
-    <img src="https://github.com/Ornella-Gigante/WebDev-Foundations-My-First-JavaScript-jQuery-Journey/raw/main/preview.png" alt="Project Preview" width="800">
-    <p>A modern web development learning journey</p>
-</div>
-
-
 ## About This Project
 
 This repository represents my first hands-on experience with modern web development technologies. As a learning project, it demonstrates the practical implementation of HTML5, CSS3, JavaScript, and jQuery, showcasing my journey from concept to deployment.
