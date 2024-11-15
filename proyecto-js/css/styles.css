@@ -202,3 +202,13 @@ footer {
     margin-top: 50px;
     box-sizing: border-box;
 }
+
+/**
+Estilo del slider 
+.bx-wrapper, .bx-viewport se encuentran en ELEMENTOS , STYLE de Dev Tools en website 
+*/ 
+
+.bx-wrapper, .bx-viewport{
+    height:250px !important;
+
+  }
