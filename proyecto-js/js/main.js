@@ -169,7 +169,19 @@ $("#to-blue").click(function(){
 
 });
 
+// Scroll arriba de la web 
 
+$('.subir').click(function(){
+
+    e.preventDefault(); // evita que al clickear se lleve a cabo ninguna función de la web aparte de scroll up 
+
+    $('html, body').animate({
+        scrollTop: 0
+    }, 500);
+
+    return false; 
+
+});
 
 
 
