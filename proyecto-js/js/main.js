@@ -147,6 +147,30 @@ posts.forEach((item,index) => {
 });
 
 
+// Selector de tema 
+
+var theme = $("#theme");
+
+$("#to-green").click(function(){
+
+    theme.attr("href", "css/green.css");
+
+});
+
+$("#to-red").click(function(){
+
+    theme.attr("href", "css/red.css");
+
+});
+
+$("#to-blue").click(function(){
+
+    theme.attr("href", "css/blue.css");
+
+});
+
+
+
 
 
 
