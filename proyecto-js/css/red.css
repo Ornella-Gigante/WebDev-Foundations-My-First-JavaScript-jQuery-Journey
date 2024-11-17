@@ -1,21 +1,115 @@
+/* Estilos para el tema rojo */
 body{
     background: url('../imagenes-proyecto-js/img/rojo.jpg');
     background-attachment: fixed;
-}
-
-#logo{
+ }
+ 
+ #logo{
     background: red;
-}
-
-#menu ul li:hover{
-
+ }
+ 
+ /* Estilos del about y contenedor */
+ #about {
+    width: 100%;
+    padding: 20px;
+    position: relative; /* Añadido */
+    text-align: center; /* Añadido */
+ }
+ 
+ #about img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+ }
+ 
+ /* Asegurarse que el contenedor about p tenga el espacio adecuado */
+ #about p {
+    margin: 0;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+ }
+ 
+ /* Estilos de navegación */
+ #menu ul li:hover{
     background: red;
-
-}
-
-.button-more{
-
+ }
+ 
+ .button-more{
     background: red;
-
-}
-
+ }
+ 
+ /* Estilos del mensaje de bienvenida */
+ .welcome-message {
+    position: relative; /* Añadido */
+    text-align: center;
+    padding: 30px;
+    margin: 30px auto;
+    width: 90%;
+    background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    clear: both; /* Añadido para evitar problemas con elementos flotantes */
+ }
+ 
+ .welcome-text {
+    font-size: 3em;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    line-height: 1.4; /* Añadido */
+ }
+ 
+ .logout-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+ }
+ 
+ .logout-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 30px;
+    background-color: #e74c3c;
+    color: white !important; /* Asegurar color del texto */
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 2em;
+    font-weight: bold; /* Añadido */
+    border: none;
+    cursor: pointer;
+    min-width: 200px;
+ }
+ 
+ .logout-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    text-decoration: none;
+ }
+ 
+ .logout-btn i {
+    font-size: 3em;
+ }
+ 
+ /* Animación del mensaje de bienvenida */
+ .welcome-message {
+    animation: fadeIn 0.6s ease-in-out;
+ }
+ 
+ @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+ }

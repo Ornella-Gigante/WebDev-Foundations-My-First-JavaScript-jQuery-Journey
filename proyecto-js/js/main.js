@@ -171,18 +171,62 @@ $("#to-blue").click(function(){
 
 // Scroll arriba de la web 
 
-$('.subir').click(function(){
 
-    e.preventDefault(); // evita que al clickear se lleve a cabo ninguna función de la web aparte de scroll up 
-
+$('.subir').click(function(e) { 
+    e.preventDefault();
     $('html, body').animate({
         scrollTop: 0
     }, 500);
-
-    return false; 
-
+    return false;
 });
 
+//login falso 
+
+$("#login form").submit(function(e){
+    e.preventDefault();  // <- Agregado
+    var form_name = $("#form_name").val();
+    localStorage.setItem("form_name", form_name);
+    location.reload();  // <- Agregado
+});
+
+var form_name = localStorage.getItem("form_name");
+
+if(form_name != null && form_name != "undefined"){
+
+
+    //Se crea mensaje de bienvenida automático al guardar el nombre 
+
+    var about_parrafo = $("#about p");
+
+    about_parrafo.html(`
+        <div class="welcome-message">
+            <div class="welcome-text">
+                ¡Welcome, ${form_name}!
+            </div>
+            <div class="logout-container">
+                <a href='#' id='logout' class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    End Session
+                </a>
+            </div>
+        </div>
+    `);
+    // SE oculta la caja de login 
+
+    $("#login").hide();
+
+
+    // Si se le da click a END SESSION se hará un localStorage clear y se borrarán los datos de sesion 
+    // Mostrará de nuevo el log in 
+
+    $("#logout").click(function(e){  //
+        e.preventDefault();          // 
+        localStorage.clear();
+        location.reload();
+    });
+
+
+};
 
 
 
