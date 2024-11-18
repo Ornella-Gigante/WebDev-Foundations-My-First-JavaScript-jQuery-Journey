@@ -163,27 +163,72 @@ var posts = [
 
 }
 
+// Funcion que actualizara los colore del acordeon 
+
+
+function updateAccordionTheme(color) {
+    const themeColors = {
+        green: {
+            header: '#235E3D',
+            headerHover: '#1d4d32',
+            headerActive: '#1a442c',
+            text: '#ffffff'
+        },
+        red: {
+            header: '#ff0000',
+            headerHover: '#e60000',
+            headerActive: '#cc0000',
+            text: '#ffffff'
+        },
+        blue: {
+            header: '#0000ff',
+            headerHover: '#0000e6',
+            headerActive: '#0000cc',
+            text: '#ffffff'
+        }
+    };
+
+    const colors = themeColors[color];
+
+    $('.ui-accordion .ui-accordion-header').css({
+        'background': colors.header,
+        'color': colors.text,
+        'border': '1px solid ' + colors.header
+    });
+
+    $('.ui-accordion .ui-accordion-header:hover').css({
+        'background': colors.headerHover
+    });
+
+    $('.ui-accordion .ui-accordion-header.ui-state-active').css({
+        'background': colors.headerActive
+    });
+
+    $('.ui-accordion .ui-accordion-content').css({
+        'border': '1px solid ' + colors.header,
+        'border-top': 'none'
+    });
+}
+
+
 
 // Selector de tema 
 
 var theme = $("#theme");
 
 $("#to-green").click(function(){
-
     theme.attr("href", "css/green.css");
-
+    updateAccordionTheme('green'); // NUEVO: Actualiza el acordeón
 });
 
 $("#to-red").click(function(){
-
     theme.attr("href", "css/red.css");
-
+    updateAccordionTheme('red'); // NUEVO: Actualiza el acordeón
 });
 
 $("#to-blue").click(function(){
-
     theme.attr("href", "css/blue.css");
-
+    updateAccordionTheme('blue'); // NUEVO: Actualiza el acordeón
 });
 
 // Scroll arriba de la web 
@@ -228,6 +273,7 @@ if(form_name != null && form_name != "undefined"){
             </div>
         </div>
     `);
+
     // SE oculta la caja de login 
 
     $("#login").hide();
@@ -249,11 +295,21 @@ if(form_name != null && form_name != "undefined"){
 //Condicion para el acordeon 
 
 if(window.location.href.indexOf('about')> -1){
-
-    $("#acordeon").accordion();
-
+    $("#acordeon").accordion({
+        heightStyle: "content",
+        collapsible: true,
+        active: false
+    });
+    
+    // Detectar y aplicar el tema actual al acordeón
+    let currentTheme = 'green'; // tema por defecto
+    if(theme.attr('href').includes('red')) {
+        currentTheme = 'red';
+    } else if(theme.attr('href').includes('blue')) {
+        currentTheme = 'blue';
+    }
+    updateAccordionTheme(currentTheme);
 }
-
 
 });
 
