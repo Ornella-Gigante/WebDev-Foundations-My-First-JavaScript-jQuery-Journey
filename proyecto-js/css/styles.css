@@ -272,9 +272,46 @@ Estilo del slider
     width: 65%;
     float: left;
     margin-top: 40px;
+    min-height: 600px;  /* Esto asegurará que el box tenga altura mínima */
+    background: white;
 }
-
 
 #acordeon{
     margin-top: 20px;
+}
+
+
+#reloj {
+    font-family: 'Arial', sans-serif;
+    font-size: 5em;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 30px 0;
+    border-radius: 10px;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border: 3px solid;
+    transition: all 0.3s ease;
+}
+
+#reloj:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Estilos específicos para cada tema */
+body[data-theme="green"] #reloj {
+    border-color: #235E3D;
+}
+
+body[data-theme="red"] #reloj {
+    border-color: #ff0000;
+}
+
+body[data-theme="blue"] #reloj {
+    border-color: #0000ff;
 }

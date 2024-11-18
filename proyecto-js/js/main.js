@@ -311,9 +311,32 @@ if(window.location.href.indexOf('about')> -1){
     updateAccordionTheme(currentTheme);
 }
 
-});
+// Reloj 
+if(window.location.href.indexOf('reloj')> -1){
+    // Función para actualizar el reloj
+    function updateClock() {
+        var now = moment();
+        var clockDisplay = now.format("HH:mm:ss");
+        $("#reloj").html(clockDisplay);
 
+        // Actualizar el tema del reloj
+        var currentTheme = 'green';
+        if($("#theme").attr('href').includes('red')) {
+            currentTheme = 'red';
+        } else if($("#theme").attr('href').includes('blue')) {
+            currentTheme = 'blue';
+        }
+        $('body').attr('data-theme', currentTheme);
+    }
 
+    // Actualizar cada segundo
+    updateClock(); // Actualización inicial
+    setInterval(updateClock, 1000);
 
+    // Modificar los handlers de tema para actualizar también el reloj
+    $("#to-green, #to-red, #to-blue").click(function() {
+        setTimeout(updateClock, 100); // Pequeño delay para asegurar que el tema se actualizó
+    });
+}
 
-
+})
