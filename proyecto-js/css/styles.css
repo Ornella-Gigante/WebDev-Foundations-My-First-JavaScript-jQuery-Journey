@@ -80,7 +80,7 @@
     font-family: Helvetica, Arial;
 }
 
-.post h2{
+h2{
     font-size: 40px;
     color: #333;
 }
@@ -265,4 +265,16 @@ Estilo del slider
 .subir:hover {
     background-color: #555;
     transform: scale(1.1);
+}
+
+
+#box{
+    width: 65%;
+    float: left;
+    margin-top: 40px;
+}
+
+
+#acordeon{
+    margin-top: 20px;
 }

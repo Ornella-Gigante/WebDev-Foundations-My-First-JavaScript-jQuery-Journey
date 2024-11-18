@@ -246,8 +246,17 @@ if(form_name != null && form_name != "undefined"){
 };
 
 
+//Condicion para el acordeon 
+
+if(window.location.href.indexOf('about')> -1){
+
+    $("#acordeon").accordion();
+
+}
+
 
 });
+
 
 
 
