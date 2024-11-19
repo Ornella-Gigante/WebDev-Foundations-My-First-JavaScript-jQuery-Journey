@@ -156,6 +156,8 @@ form input[type="text"],
 
 form input[type="password"],
 
+form input[type="number"],
+
 form input[type="email"]{
 
     padding: 5px;
@@ -314,4 +316,19 @@ body[data-theme="red"] #reloj {
 
 body[data-theme="blue"] #reloj {
     border-color: #0000ff;
+}
+
+
+#form_contact{
+    width: 60%;
+    margin-top: 15px;
+    font-family: Helvetica, Arial;
+}
+
+#form_contact label{
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+
+    
 }
