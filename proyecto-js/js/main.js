@@ -362,6 +362,12 @@ if(window.location.href.indexOf('reloj')> -1){
 
     if(window.location.href.indexOf('contact')> -1){
 
+        //Creando calendario para date 
+
+        $("form input[name='date']").datepicker({
+            dateFormat: 'dd-mm-yy'
+        });
+
         $.validate({
             lang:'en'
         })
