@@ -218,17 +218,33 @@ var theme = $("#theme");
 
 $("#to-green").click(function(){
     theme.attr("href", "css/green.css");
-    updateAccordionTheme('green'); // NUEVO: Actualiza el acordeón
+    updateAccordionTheme('green'); // Actualiza el acordeón
+    $('body').attr('data-theme', 'green'); // Añadido para el botón Send
 });
 
 $("#to-red").click(function(){
     theme.attr("href", "css/red.css");
-    updateAccordionTheme('red'); // NUEVO: Actualiza el acordeón
+    updateAccordionTheme('red'); 
+    $('body').attr('data-theme', 'red'); 
 });
 
 $("#to-blue").click(function(){
     theme.attr("href", "css/blue.css");
-    updateAccordionTheme('blue'); // NUEVO: Actualiza el acordeón
+    updateAccordionTheme('blue'); 
+    $('body').attr('data-theme', 'blue'); 
+});
+
+// Detectar el tema patra poder cambiar el boton SEND de contact.html al color que corresponde 
+
+$(document).ready(function(){
+    // Detectar tema inicial
+    var currentTheme = 'green';
+    if($("#theme").attr('href').includes('red')) {
+        currentTheme = 'red';
+    } else if($("#theme").attr('href').includes('blue')) {
+        currentTheme = 'blue';
+    }
+    $('body').attr('data-theme', currentTheme);
 });
 
 // Scroll arriba de la web 
@@ -338,5 +354,20 @@ if(window.location.href.indexOf('reloj')> -1){
         setTimeout(updateClock, 100); // Pequeño delay para asegurar que el tema se actualizó
     });
 }
+
+
+    //Validacion 
+    //Esto se ejecutará en la página de contactos 
+    // Se ejecutará si existe contact (condicion) 
+
+    if(window.location.href.indexOf('contact')> -1){
+
+        $.validate({
+            lang:'en'
+        })
+
+    }
+
+
 
 })

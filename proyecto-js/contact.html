@@ -19,6 +19,12 @@
     <script type="text/javascript" src="js/jquery-ui-1.14.1/jquery-ui.min.js"></script>
     <!--Fin JQuery-->
 
+    <!--PLUGIN VALIDACION-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+
+    <!--FIN PLUGIN VALIDACION-->
+
     <!--MIS SCRIPTS JS-->
     <script type="text/javascript" src="js/main.js"></script>
      <!--FIN MIS SCRIPTS JS-->
@@ -59,13 +65,13 @@
                  <!--CARGAR FORMULARIO-->
                  <form action="" method="POST" id="form_contact">
                     <label for="name">Name</label>
-                    <input type="text" name="name"/>
+                    <input type="text" name="name" data-validation="alphanumeric"/>
                     <label for="surname">Surname</label>
-                    <input type="text" name="surname"/>
+                    <input type="text" name="surname" data-validation="alphanumeric"/>
                     <label for="email">E-mail</label>
-                    <input type="text" name="email"/>
+                    <input type="text" name="email"  data-validation="email"/>
                     <label for="sex">Sex</label>
-                    <select name="sex">
+                    <select name="sex" data-validation="required">
                         <option value="woman">Woman</option>
                         <option value="man">Man</option>
                         <option value="other">Other</option>
@@ -73,11 +79,13 @@
                     <br>
                     <br>
                     <label for="date">Date of Birth</label>
-                    <input type="text" name="date"/>
+                    <input type="text" name="date"  data-validation="date"  data-validation-format="dd-mm-yyyy"/>
                     <label for="years">Age</label>
-                    <input type="number" name="years"/>
+                    <input type="number" name="years"  data-validation="number"/>
 
+                    <!--BOTON ENVIAR-->
                     <input type="submit" value="Send">
+                    <!--FIN BOTON ENVIAR-->
                  </form>
 
 
