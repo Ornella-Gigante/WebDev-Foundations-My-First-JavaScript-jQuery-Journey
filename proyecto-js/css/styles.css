@@ -514,3 +514,40 @@ body[data-theme="blue"] #form_contact input[type="submit"] {
     opacity: 0.9;
     transform: scale(1.05);
 }
+
+/* Agregar al archivo styles.css */
+
+/* Animación para el mensaje de éxito */
+@keyframes slideDown {
+    from {
+        transform: translate(-50%, -100%);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}
+
+.success-message {
+    animation: slideDown 0.5s ease-out;
+}
+
+/* Estilos específicos según el tema */
+body[data-theme="green"] .success-message {
+    background-color: #235E3D;
+}
+
+body[data-theme="red"] .success-message {
+    background-color: #CA3413;
+}
+
+body[data-theme="blue"] .success-message {
+    background-color: #1F87C4;
+}
+
+/* Estilo para el icono */
+.success-message i {
+    margin-right: 10px;
+    font-size: 18px;
+}

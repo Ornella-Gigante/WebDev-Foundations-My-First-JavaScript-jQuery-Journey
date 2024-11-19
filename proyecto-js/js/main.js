@@ -375,5 +375,80 @@ if(window.location.href.indexOf('reloj')> -1){
     }
 
 
+   // Función para obtener el color según el tema
+   function getThemeColor() {
+    const themeColors = {
+        green: '#235E3D',
+        red: '#CA3413',
+        blue: '#1F87C4'
+    };
+    
+    let currentTheme = 'green';
+    if($("#theme").attr('href').includes('red')) {
+        currentTheme = 'red';
+    } else if($("#theme").attr('href').includes('blue')) {
+        currentTheme = 'blue';
+    }
+    
+    return themeColors[currentTheme];
+}
+
+// Configuración de la validación con mensaje de éxito
+$.validate({
+    lang: 'en',
+    onSuccess: function($form) {
+        // Obtener el color del tema actual
+        const themeColor = getThemeColor();
+        
+        // Crear el div para el mensaje si no existe
+        if($('#successMessage').length === 0) {
+            $('<div>', {
+                id: 'successMessage',
+                class: 'success-message',
+                style: `
+                    display: none;
+                    background-color: ${themeColor};
+                    color: white;
+                    padding: 20px;
+                    border-radius: 5px;
+                    margin: 20px auto;
+                    text-align: center;
+                    font-size: 16px;
+                    position: fixed;
+                    top: 20px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    z-index: 1000;
+                    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                    transition: background-color 0.3s ease;
+                `
+            }).appendTo('body');
+        } else {
+            // Actualizar el color si el mensaje ya existe
+            $('#successMessage').css('background-color', themeColor);
+        }
+
+        // Mostrar el mensaje de éxito
+        $('#successMessage')
+            .html('<i class="fas fa-check-circle"></i> Form submitted successfully!')
+            .fadeIn()
+            .delay(3000)
+            .fadeOut();
+
+        // Limpiar el formulario
+        $form[0].reset();
+
+        return false; // Prevenir el envío tradicional del formulario
+    }
+});
+
+// Actualizar el color del mensaje cuando cambia el tema
+$("#to-green, #to-red, #to-blue").click(function() {
+    if($('#successMessage').length > 0) {
+        setTimeout(() => {
+            $('#successMessage').css('background-color', getThemeColor());
+        }, 100);
+    }
+});
 
 })
