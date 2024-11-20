@@ -141,9 +141,12 @@ This is my first project working with these technologies. While striving for bes
 
 
 ## Demo
-<a href="https://vimeo.com/1031422150?share=copy" target="_blank" rel="noopener noreferrer">
-  <img src="https://github.com/Ornella-Gigante/WebDev-Foundations-My-First-JavaScript-jQuery-Journey/blob/main/demo_image.png" alt="Watch the demo!" />
-</a>
+
+<div>
+    <a href="https://vimeo.com/1031422150?share=copy" target="_blank">
+        <img src="https://github.com/Ornella-Gigante/WebDev-Foundations-My-First-JavaScript-jQuery-Journey/blob/main/demo_image.png" alt="Watch the demo!" />
+    </a>
+</div>
 
 
 ## 👨‍💻 Author
