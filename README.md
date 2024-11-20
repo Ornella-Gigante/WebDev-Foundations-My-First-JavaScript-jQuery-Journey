@@ -140,7 +140,8 @@ Through this project, I've gained practical experience in:
 This is my first project working with these technologies. While striving for best practices, I welcome suggestions and feedback for improvement. The project serves as a foundation for my continued learning in web development.
 
 ## Demo
-[![Watch the demo!]([https://github.com/Ornella-Gigante/WebDev-Foundations-My-First-JavaScript-jQuery-Journey/blob/main/demo_image.png](https://vimeo.com/1031422150?share=copy)
+[![Watch the demo!](https://github.com/Ornella-Gigante/WebDev-Foundations-My-First-JavaScript-jQuery-Journey/blob/main/demo_image.png)](https://vimeo.com/1031422150?share=copy)
+
 
 ## 👨‍💻 Author
 
